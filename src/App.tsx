@@ -1,7 +1,16 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import "./index.css"
-
+const tg = window.Telegram.WebApp;
 function App() {
+
+  useEffect(() => {
+    th.ready();
+  }, [])
+  
+  const onClose = () => {
+    tg.close()
+  }
+  
   const [count, setCount] = useState(0)
   const [energy, setEnergy] = useState(1000)
 
@@ -18,7 +27,7 @@ function App() {
         <div className="text-[42px] font-bold">
           DZB TOKEN
         </div>
-        <button className="border-2 font-bold px-[20px] py-[10px] rounded-3xl">
+        <button onClick={() => onClose()}  className="border-2 font-bold px-[20px] py-[10px] rounded-3xl">
           CEO
         </button>
       </div>
