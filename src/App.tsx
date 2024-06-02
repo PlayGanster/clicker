@@ -1,6 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import "./index.css"
-const tg = window.Telegram.WebApp;
+
+declare global {
+  interface Window {
+      Telegram: any;
+  }
+}
+
+const tg = window.Telegram.WebApp
+
 function App() {
 
   useEffect(() => {
@@ -10,7 +18,6 @@ function App() {
   const onClose = () => {
     tg.close()
   }
-  
   const [count, setCount] = useState(0)
   const [energy, setEnergy] = useState(1000)
 
