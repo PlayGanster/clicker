@@ -31,18 +31,18 @@ function App() {
   return (
     <div className="w-full flex p-4 h-[100dvh] flex-col justify-between">
       <div className="w-full flex justify-between">
-        <div className="text-[42px] font-bold">
+        <div className="text-[32px] font-bold text-white">
           DZB TOKEN
         </div>
-        <button onClick={() => onClose()}  className="border-2 font-bold px-[20px] py-[10px] rounded-3xl">
+        <button onClick={() => onClose()}  className="border-2 font-bold px-[20px] py-[10px] rounded-3xl text-white">
           CEO
         </button>
       </div>
-      <div className="w-full text-center text-[32px] font-semibold">
+      <div className="w-full text-center text-[32px] font-semibold text-white">
         Кол-во: {count}
       </div>
-      <div className="w-full flex justify-center items-center">
-        <div onClick={() => addCount()} className="border-2 cursor-pointer flex justify-center items-center rounded-[100%] w-[100px] h-[100px] font-bold">
+      <div className="w-full flex justify-center items-center text-white">
+        <div onClick={() => addCount()} className="border-2 cursor-pointer flex justify-center items-center rounded-[100%] w-[100px] h-[100px] font-bold text-white">
           DZB
         </div>
       </div>
@@ -53,17 +53,17 @@ function App() {
           }} className="bg-orange-500 h-full rounded-3xl">
           </div>
         </div>
-        <div>1000/{energy}</div>
+        <div className='text-white'>1000/{energy}</div>
       </div>
       <div className="w-full flex justify-center">
         <div className="flex w-[250px] justify-center">
-          <div className="cursor-pointer font-semibold border-2 p-[10px] text-[18px]">
+          <div className="cursor-pointer font-semibold border-2 p-[10px] text-[18px] text-white">
             Профиль
           </div>
-          <div className="cursor-pointer font-semibold border-2 p-[10px] text-[18px]">
+          <div className="cursor-pointer font-semibold border-2 p-[10px] text-[18px] text-white">
             Профиль
           </div>
-          <div className="cursor-pointer font-semibold border-2 p-[10px] text-[18px]">
+          <div className="cursor-pointer font-semibold border-2 p-[10px] text-[18px] text-white">
             Профиль
           </div>
         </div>
