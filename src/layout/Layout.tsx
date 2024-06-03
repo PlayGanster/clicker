@@ -2,8 +2,10 @@ import { GiTrophyCup } from 'react-icons/gi'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { SlEnergy } from 'react-icons/sl'
 import { Outlet } from 'react-router-dom'
+import { useAppSelector } from '../redux/store'
 
 const Layout = () => {
+	const user = useAppSelector(state=>state.user)
 	return (
 		<div className="w-full min-h-[100dvh] flex flex-col justify-between bg-[#25272B]">
 			<div className="w-full p-[20px]">
@@ -28,7 +30,7 @@ const Layout = () => {
 					<div className="flex items-center gap-[10px]">
 						<SlEnergy size={34} color="yellow" />
 						<div className="flex flex-col">
-							<p className="font-semibold text-[14px]">1000</p>
+							<p className="font-semibold text-[14px]">{user.energy}</p>
 							<p className="font-semibold text-[12px] text-gray-400">1000/hour</p>
 						</div>
 					</div>
