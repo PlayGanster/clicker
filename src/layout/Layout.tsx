@@ -3,7 +3,7 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import { SlEnergy } from 'react-icons/sl'
 import { Outlet } from 'react-router-dom'
 
-const Layout = (props: {tg: any}) => {
+const Layout = () => {
 	return (
 		<div className="w-full min-h-[100dvh] flex flex-col justify-between bg-[#25272B]">
 			<div className="w-full p-[20px]">
