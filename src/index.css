@@ -9,3 +9,22 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.animate-count {
+  animation: customAni 1s ease 0s infinite normal none;
+}
+
+@keyframes customAni {
+  0% {
+	animation-timing-function: ease-in;
+	opacity: 1;
+	transform: translateY(15px);
+  display: flex!important;
+  }
+  100% {
+	animation-timing-function: ease-out;
+	opacity: 0;
+	transform: translateY(0px);
+  display: none!important;
+  }
+}

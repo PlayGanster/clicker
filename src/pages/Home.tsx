@@ -9,7 +9,8 @@ const Home = () => {
 	const dispatch = useAppDispatch()
 	const [rotateX, setRotateX] = useState(0);
 	const [rotateY, setRotateY] = useState(0);
-  const [clickCoords, setClickCoords] = useState<any>(null);
+  const [clickCoords, setClickCoords] = useState<any>([]);
+  const [tapCount, setTapCount] = useState(0);
 
 	const handleTouchStart = (event:any) => {
 		if((user.energy - 5) >= 0){
@@ -19,11 +20,8 @@ const Home = () => {
 			const rect = block.getBoundingClientRect();
 			const x = event.touches[0].clientX - rect.left;
 			const y = event.touches[0].clientY - rect.top;
-			console.log(event)
-			setClickCoords({ x, y });
-			setTimeout(() => {
-				setClickCoords(null);
-			}, 1000); // Remove coordinate display after 1 second
+			setClickCoords([...clickCoords, { x: x, y: y, count: tapCount, display: false }]);
+			setTapCount(tapCount + 1);
 		}
 		const block = event.currentTarget;
 		const rect = block.getBoundingClientRect();
@@ -45,6 +43,10 @@ const Home = () => {
     setRotateY(0);
   };
 
+	const onDelete = (coord:any) => {
+		setClickCoords((prevCoords:any) => prevCoords.filter((c:any) => c !== coord));
+	};
+
 	return (
 		<div className="w-full h-full flex flex-col justify-center items-center gap-[20px]">
 			<h2 className="flex gap-[10px] text-[46px] font-bold text-[white] items-center"><RiCopperCoinFill color="yellow" size={46} />{user.coin}</h2>
@@ -57,21 +59,28 @@ const Home = () => {
     }} onTouchStart={handleTouchStart}
 		onTouchEnd={handleTouchEnd}>
 				<img src="https://sun6-23.userapi.com/s/v1/ig2/2sGschNkDhDhVkKQt5Llo-Madl1doK-hG9MqbrMG8MSpNgt-FkePIAvL3JJoxCY7zde1xkpo6ifSd9gQaBp6rmjf.jpg?size=2149x2149&quality=95&crop=0,0,2149,2149&ava=1" className="w-full h-full rounded-[100%]"/>
-				{clickCoords && (
-					<div
-						style={{
-							position: 'absolute',
-							top: clickCoords.y,
-							left: clickCoords.x,
-							fontSize: 24,
-							color: 'black',
-							zIndex: 1,
-						}}
-						className="font-bold"
-					>
-						5
-					</div>
-				)}
+				{clickCoords && clickCoords.map((coord:any, index:number) => {
+					setTimeout(() => {
+						coord.display = true;
+						onDelete(coord);
+					}, 500)
+					return (
+						<div
+							key={index}
+							className="animate-count font-bold text-[42px]"
+							style={{
+								position: 'absolute',
+								top: coord.y,
+								left: coord.x,
+								color: 'black',
+								zIndex: 1,
+								display: coord.display ? 'none' : 'block', // Add this line
+							}}
+						>
+							5
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	)
