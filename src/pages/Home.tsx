@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { GiLaurels } from 'react-icons/gi'
 import { RiCopperCoinFill } from 'react-icons/ri'
 import { useAppDispatch, useAppSelector } from '../redux/store'
