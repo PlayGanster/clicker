@@ -15,6 +15,12 @@ const tg = window.Telegram.WebApp
 
 function App() {
   useEffect(() => {
+    document.addEventListener("DOMContentLoaded", () => {
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      }
+    });
     tg.ready()
   }, [])
   return (
