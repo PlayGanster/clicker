@@ -1,0 +1,148 @@
+.home-page {
+	width: 100%;
+	height: 100dvh;
+	background: radial-gradient(circle, rgba(253, 237, 201, 1) 0%, rgba(241, 158, 54, 1) 15%, rgba(23, 23, 23, 1) 75%);
+	padding-top: 100px;
+	padding-bottom: 140px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.home-page .page__bottom--color {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	background: rgba(241,158,54,1) 15%;
+	box-shadow: 0px 0px 300px 350px #EC7A16;
+	z-index: 1;
+}
+
+.home-page .page__leader {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+}
+
+.home-page .page__leader .leader__info {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.home-page .page__leader .leader__info .info__coins {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+}
+
+.home-page .page__leader .leader__info .info__coins .coins__icon {
+	width: 60px;
+	height: 60px;
+}
+
+.home-page .page__leader .leader__info .info__coins .coins__count {
+	font-size: 62px;
+	color: white;
+	font-weight: bolder;
+}
+
+.home-page .page__leader .leader__info .info__rank {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+}
+
+.home-page .page__leader .leader__info .info__rank .rank__place {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: white;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.home-page .page__leader .leader__info .info__rank .rank__place .place__venok {
+	width: 20px;
+}
+
+.home-page .page__leader .leader__info .info__rank .rank__place .place__venok.-left {
+	transform: rotateY(180deg);
+}
+
+.home-page .page__leader .leader__info .info__rank .rank__point {
+	width: 7.5px;
+	height: 7.5px;
+	border-radius: 50%;
+	background: white;
+}
+
+.home-page .page__leader .leader__info .info__rank .rank__info {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.home-page .page__leader .leader__info .info__rank .rank__user {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.home-page .page__leader .leader__info .info__rank .rank__user .user__name {
+	font-size: 18px;
+	font-weight: 600;
+	color: white;
+}
+
+.home-page .page__leader .root {
+	margin: 0!important;
+	overflow: visible!important;
+}
+
+.home-page .page__leader .root .container {
+	overflow: visible!important;
+}
+
+@media only screen and (max-height:730px) {
+	.home-page .page__leader .leader__info .info__coins .coins__count {
+		font-size: 52px;
+	}
+	.home-page .page__leader .leader__info .info__coins .coins__icon {
+		width: 50px;
+		height: 50px;
+	}
+	.home-page .page__leader .leader__info .info__rank .rank__place .place__venok {
+		width: 15px;
+	}
+	.home-page .page__leader .leader__info .info__rank .rank__place {
+		font-size: 16px;
+	}
+	.home-page .page__leader .leader__info .info__rank .rank__user svg {
+		width: 24px;
+	}
+	.home-page .page__leader .leader__info .info__rank .rank__user .user__name {
+		font-size: 16px;
+	}
+	.notcoin {
+		width: 200px!important;
+		min-width: 240px!important;
+		height: 200px!important;
+		min-height: 240px!important;
+	}
+}
+
+@media only screen and (max-height:650px) { 
+	.notcoin {
+		width: 150px!important;
+		min-width: 190px!important;
+		height: 150px!important;
+		min-height: 190px!important;
+	}
+}
