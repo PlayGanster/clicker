@@ -26,8 +26,8 @@ function App() {
     if(tg.initDataUnsafe.user !== null && tg.initDataUnsafe.user !== undefined){
       dispatch(setInitData({data: tg.initDataUnsafe.user}))
     }else {
-      dispatch(setInitData({data: {first_name: "leader", last_name: ""}}))
-      // dispatch(addError({data: {description: "Не удалось получить данные от телеграма, попробуйте перезапустить приложение."}}))
+      // dispatch(setInitData({data: {first_name: "leader", last_name: ""}}))
+      dispatch(addError({data: {description: "Не удалось получить данные от телеграма, попробуйте перезапустить приложение."}}))
     }
   }, [])
   return (
