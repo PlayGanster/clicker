@@ -32,6 +32,7 @@ function App() {
   }, [])
   return (
       <Loader>
+        {tg.initDataUnsafe.user.photo_url}
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
