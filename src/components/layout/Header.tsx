@@ -1,6 +1,6 @@
 import { formatNumber } from '../../other/formatNumber'
 import "../../styles/header.scss"
-import Coin from "../../assets/coin.png"
+import Coin from "../../assets/coin.webp"
 import { GiTrophyCup } from 'react-icons/gi'
 import { cutNumber } from '../../other/cutNumber'
 import { useAppSelector } from '../../redux/store'

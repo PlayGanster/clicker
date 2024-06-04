@@ -1,5 +1,5 @@
-import Energy from "../../assets/energy.png"
-import Teddy from "../../assets/teddy-bear.png"
+import Energy from "../../assets/energy.webp"
+import Teddy from "../../assets/teddy-bear.webp"
 import { cutNumber } from '../../other/cutNumber'
 import { useAppSelector } from '../../redux/store'
 import "../../styles/footer.scss"

@@ -1,6 +1,6 @@
 import "../styles/home.scss"
-import CoinImg from '../assets/coin.png'
-import Rank from "../assets/rank.png"
+import CoinImg from '../assets/coin.webp'
+import Rank from "../assets/rank.webp"
 import { formatNumber } from '../other/formatNumber'
 import { GiTrophyCup } from 'react-icons/gi'
 import { MdKeyboardArrowRight } from 'react-icons/md'
