@@ -135,6 +135,12 @@ export const Coin = ({
       rotateX: 0,
       rotateY: 0,
     })
+    setButtonTransform({
+      scale: 1,
+      translateZ: 0,
+      rotateX: 0,
+      rotateY: 0,
+    })
   }
 
   return (
