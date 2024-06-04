@@ -5,6 +5,8 @@ import Layout from './layout/Layout'
 import Home from './pages/Home'
 import { useAppDispatch } from './redux/store'
 import { setInitData } from './redux/features/userSlice'
+import Loader from './components/Loader/Loader'
+import { addError } from './redux/features/settingsSlice'
 
 declare global {
   interface Window {
@@ -18,16 +20,22 @@ function App() {
   useEffect(() => {
     tg.ready()
     tg.expand()
-    dispatch(setInitData({data: tg.initDataUnsafe}))
+    if(tg.initDataUnsafe.user !== null && tg.initDataUnsafe.user !== undefined){
+      dispatch(setInitData({data: tg.initDataUnsafe.user}))
+    }else {
+      dispatch(addError({data: {description: "Не удалось получить данные от телеграма, попробуйте перезапустить приложение."}}))
+    }
   }, [])
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Loader>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </Loader>
   );
 }
 

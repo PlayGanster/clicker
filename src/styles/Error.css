@@ -1,0 +1,42 @@
+.error-list {
+	width: 100dvw;
+	height: 100dvh;
+	display: flex;
+	justify-content: center;
+  background: rgb(42,45,50);
+  background: linear-gradient(90deg, rgba(42,45,50,1) 0%, rgba(19,19,19,1) 99%);
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	color: white;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.error-list .list__header {
+	width: 100%;
+	padding: 20px;
+	font-size: 42px;
+}
+
+.error-list .list__errors {
+	padding: 20px;
+	text-align: center;
+	font-size: 24px;
+}
+
+.error-list .list__button {
+	padding: 20px;
+}
+
+.error-list .list__button button{
+	padding: 10px 20px;
+	font-size: 24px;
+	border-radius: 50px;
+	color: white;
+	border: 2px solid #282B2E;
+  background: linear-gradient(-60deg, #141515 0%, #2E3236 100%);
+}

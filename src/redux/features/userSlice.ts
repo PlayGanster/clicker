@@ -27,7 +27,7 @@ export const UserSlice = createSlice({
 			state.energy = action.payload.data
 		},
 		setInitData: (state, action:PayloadAction<{data: any}>) => {
-			state.energy = action.payload.data
+			state.initData = action.payload.data
 		},
 	}
 })
