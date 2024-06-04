@@ -11,11 +11,11 @@
 }
 .notcoin {
   width: 300px;
-  min-width: 320px;
-  height: 300px;
+  min-width: 270px;
+  height: 250px;
   min-height: 300px;
   border-radius: 50%;
-  background-image: url('../assets/big_coin.png');
+  background-image: url('../assets/coin.png');
   font-size: 72px;
   font-weight: bold;
   text-align: center;

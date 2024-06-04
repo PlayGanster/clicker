@@ -8,6 +8,20 @@
 	gap: 20px;
 }
 
+.home .root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+
+
+.home .root .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .home .home__balance {
 	display: flex;
 	align-items: center;

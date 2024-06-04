@@ -8,6 +8,12 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+  background: rgb(42,45,50);
+  background: linear-gradient(90deg, rgba(42,45,50,1) 0%, rgba(19,19,19,1) 99%);
 }
 
 .footer .footer__energy {

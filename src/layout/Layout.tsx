@@ -7,7 +7,16 @@ const Layout = () => {
 	return (
 		<div className="layout">
 			<Header />
-			<div className="w-full h-full flex justify-center items-center">
+			<div style={{
+				width: "100%",
+				height:"100%",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				overflowY: "auto",
+				paddingTop: 120,
+				paddingBottom:80
+			}}>
 				<Outlet />
 			</div>
 			<Footer />

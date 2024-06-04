@@ -1,7 +1,7 @@
 import "../styles/Home.css"
 import { formatNumber } from '../data/formatNumber'
 import { useAppSelector } from '../redux/store'
-import CoinTop from "../assets/coin.png"
+import CoinTop from "../assets/big_coin.png"
 import { GiLaurelCrown } from 'react-icons/gi'
 import { Coin } from '../components/Coin/Coin'
 
