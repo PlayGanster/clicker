@@ -28,7 +28,6 @@
   user-select: none;
   -webkit-user-drag: none;
   touch-action: none;
-  user-zoom: fixed;
   transform-origin: center;
   will-change: transform;
   position: relative;
