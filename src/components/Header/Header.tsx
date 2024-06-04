@@ -10,7 +10,7 @@ const Header = () => {
 				<div className="wrapper__profile">
 					<img className="profile__icon" src="https://avatars.dzeninfra.ru/get-zen_doc/9716076/pub_643973f64d6f40338279c0d7_643974586f99ba706b90cd3d/scale_1200" />
 					<div className="profile__info">
-						<p className="info__name">{user.initData.first_name ? user.initData.first_name : "Pavel"} {user.initData.last_name ? user.initData.last_name : "Durov"}</p>
+						<p className="info__name">{user.initData.first_name} {user.initData.last_name}</p>
 						<p className="info__coins">1,000,000</p>
 					</div>
 				</div>
