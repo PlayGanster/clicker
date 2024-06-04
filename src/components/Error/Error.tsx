@@ -1,6 +1,8 @@
 import { useAppSelector } from '../../redux/store'
 import "../../styles/Error.css"
 
+const tg = window.Telegram.WebApp
+
 const Error = () => {
 	const settings = useAppSelector(state=>state.settings)
 	return (
@@ -16,7 +18,7 @@ const Error = () => {
 				}
 			</div>
 			<div className="list__button">
-				<button>
+				<button onClick={() => tg.close()}>
 					Выйти
 				</button>
 			</div>
