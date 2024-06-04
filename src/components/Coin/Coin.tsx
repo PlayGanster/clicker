@@ -86,45 +86,47 @@ export const Coin = ({
   const [numbers, setNumbers] = useState<NumberInfo[]>([])
 
   const handleTouchStart = (event: any) => {
-    handleClick()
-    if (notCoinRef.current) {
-      const touch = event.touches[0]
-      const rect = notCoinRef.current.getBoundingClientRect()
-      const centerX = rect.left + rect.width / 2
-      const centerY = rect.top + rect.height / 2
+    handleClick();
 
-      const offsetX = touch.clientX - centerX
-      const offsetY = centerY - touch.clientY
+  if (notCoinRef.current) {
+    for (let i = 0; i < event.changedTouches.length; i++) {
+      const touch = event.changedTouches[i];
+      const rect = notCoinRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
 
-      const rotateXValue = offsetY * 0.1
-      const rotateYValue = offsetX * 0.1
+      const offsetX = touch.clientX - centerX;
+      const offsetY = centerY - touch.clientY;
 
-      setButtonTransform({
-        scale: 1,
-        translateZ: -5,
-        rotateX: rotateXValue,
-        rotateY: rotateYValue,
-      })
+      const rotateXValue = offsetY * 0.1;
+      const rotateYValue = offsetX * 0.1;
+
+      setButtonTransform((prevTransform) => ({
+        ...prevTransform,
+        rotateX: prevTransform.rotateX + rotateXValue,
+        rotateY: prevTransform.rotateY + rotateYValue,
+      }));
 
       const randomNumberBetweenTenAndMinusTen =
-        Math.floor(Math.random() * 21) - 10
+        Math.floor(Math.random() * 21) - 10;
 
       const newNumber: NumberInfo = {
-        id: `${Date.now()}`,
+        id: `${Date.now()}-${touch.identifier}`,
         value: clickValue * 5,
         x: touch.clientX + randomNumberBetweenTenAndMinusTen,
-        y: touch.clientY
-      }
+        y: touch.clientY,
+      };
 
-      setNumbers((prevNumbers) => [...prevNumbers, newNumber])
+      setNumbers((prevNumbers) => [...prevNumbers, newNumber]);
 
       // Remove the number after the animation duration
       setTimeout(() => {
         setNumbers((prevNumbers) =>
           prevNumbers.filter((number) => number.id !== newNumber.id)
-        )
-      }, numberAnimationDurationMs)
+        );
+      }, numberAnimationDurationMs);
     }
+		}
   }
   const handleTouchEnd = () => {
     setButtonTransform({
