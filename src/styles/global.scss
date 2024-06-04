@@ -10,6 +10,11 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal; 
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 // @media only screen and (min-width: 768px){

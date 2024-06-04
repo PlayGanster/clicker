@@ -146,3 +146,15 @@
 		min-height: 190px!important;
 	}
 }
+
+@media only screen and (min-width: 768px){
+	.home-page .page__leader{
+		flex-direction: row;
+	}
+	.notcoin {
+		width: 200px!important;
+		min-width: 220px!important;
+		height: 200px!important;
+		min-height: 220px!important;
+	}
+}
