@@ -3,8 +3,8 @@ import "./index.css"
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './layout/Layout'
 import Home from './pages/Home'
-import { Provider } from 'react-redux'
-import { store } from './redux/store'
+import { useAppDispatch } from './redux/store'
+import { setInitData } from './redux/features/userSlice'
 
 declare global {
   interface Window {
@@ -14,12 +14,13 @@ declare global {
 const tg = window.Telegram.WebApp
 
 function App() {
+	const dispatch = useAppDispatch()
   useEffect(() => {
     tg.ready()
     tg.expand()
+    dispatch(setInitData({data: tg.initDataUnsafe}))
   }, [])
   return (
-    <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -27,7 +28,6 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </Provider>
   );
 }
 

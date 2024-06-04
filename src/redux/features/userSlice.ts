@@ -2,15 +2,18 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 type Coin = number
 type Energy = number
+type InitData = any
 
 interface UserState {
 	coin: Coin,
-	energy: Energy
+	energy: Energy,
+	initData: InitData
 }
 
 const initialState: UserState = {
-	coin: 0,
-	energy: 1000
+	coin: 1000000,
+	energy: 1000,
+	initData: null
 }
 
 export const UserSlice = createSlice({
@@ -22,9 +25,12 @@ export const UserSlice = createSlice({
 		},
 		setEnergy: (state, action:PayloadAction<{data: number}>) => {
 			state.energy = action.payload.data
-		}
+		},
+		setInitData: (state, action:PayloadAction<{data: any}>) => {
+			state.energy = action.payload.data
+		},
 	}
 })
 
 export default UserSlice.reducer
-export const {setCoin, setEnergy} = UserSlice.actions
+export const {setCoin, setEnergy, setInitData} = UserSlice.actions

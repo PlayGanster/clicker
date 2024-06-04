@@ -1,0 +1,8 @@
+.footer {
+	width: 100dvw;
+	height: 80px;
+	padding: 20px;
+	box-shadow: 0px 0px 15px 2px #42464B;
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+}
