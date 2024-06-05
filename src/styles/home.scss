@@ -122,7 +122,10 @@
 
 @media only screen and (min-width: 600px) {
 	.home-page .page__leader .leader__info .info__coins .coins__count {
-		font-size: 54px;
+		font-size: 42px!important;
+	}
+	.home-page .page__leader .leader__info {
+		gap: 5px;
 	}
 }
 
