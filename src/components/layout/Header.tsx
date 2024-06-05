@@ -12,7 +12,7 @@ const Header = () => {
 				<div className="wrapper__leader">
 					<img src="https://uprostim.com/wp-content/uploads/2021/03/image038-54-scaled.jpg" className="leader__icon" />
 					<div className="leader__info">
-						<p className="info__name">Wallet News</p>
+						<p className="info__name">{user.initData.first_name} {user.initData.username}</p>
 						<p className="info__count"><img src={Coin} />{formatNumber(user.coin)}</p>
 					</div>
 				</div>
