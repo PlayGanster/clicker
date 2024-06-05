@@ -25,7 +25,7 @@
 .home-page .page__leader {
 	display: flex;
 	flex-direction: column;
-	gap: 40px;
+	gap: 20px;
 	justify-content: center;
 	align-items: center;
 	z-index: 2;
@@ -141,6 +141,6 @@
     width: 20px;
   }
   .home-page .page__leader {
-    gap: 10px;
+    gap: 5px;
   }
 }
