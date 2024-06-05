@@ -1,5 +1,5 @@
 import Energy from "../../assets/energy.webp"
-import Teddy from "../../assets/teddy-bear.webp"
+import Coin from "../../assets/coin.webp"
 import { formatNumber } from '../../other/formatNumber'
 import { useAppSelector } from '../../redux/store'
 import "../../styles/footer.scss"
@@ -25,23 +25,23 @@ const Footer = () => {
 				</div>
 				<div className="footer__navigation">
 					<div className="navigation-item">
-						<img src={Teddy} className="item__icon"/>
+						<img src="https://smileysplanet.ru/smileys/apple/wrapped-gift-1945.png" className="item__icon"/>
 						<p className="item__name">Frens</p>
 					</div>
 					<span className="tree"></span>
 					<div className="navigation-item">
-						<img src={Teddy} className="item__icon"/>
-						<p className="item__name">Frens</p>
+						<img src={Coin} className="item__icon"/>
+						<p className="item__name">Earn</p>
 					</div>
 					<span className="tree"></span>
 					<div className="navigation-item">
-						<img src={Teddy} className="item__icon"/>
-						<p className="item__name">Frens</p>
+						<img src="https://smileysplanet.ru/smileys/apple/rocket-1845.png" className="item__icon"/>
+						<p className="item__name">Boosts</p>
 					</div>
 					<span className="tree"></span>
 					<div className="navigation-item">
-						<img src={Teddy} className="item__icon"/>
-						<p className="item__name">Frens</p>
+						<img src="https://smileysplanet.ru/smileys/apple/sparkles-1934.png" className="item__icon"/>
+						<p className="item__name">Trade</p>
 					</div>
 				</div>
 			</div>

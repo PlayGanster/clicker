@@ -126,3 +126,21 @@
 		font-size: 54px;
 	}
 }
+
+@media only screen and (max-height: 550px) {
+  .home-page .page__leader .leader__info .info__rank .rank__place {
+    font-size: 14px;
+  }
+  .home-page .page__leader .leader__info .info__rank .rank__place .place__venok {
+    width: 15px;
+  }
+  .home-page .page__leader .leader__info .info__rank .rank__user .user__name {
+    font-size: 14px;
+  }
+  .home-page .page__leader .leader__info .info__rank .rank__user svg {
+    width: 20px;
+  }
+  .home-page .page__leader {
+    gap: 10px;
+  }
+}

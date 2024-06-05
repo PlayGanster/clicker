@@ -91,3 +91,21 @@
     stroke-dashoffset: 0;
   }
 }
+
+@media only screen and (max-height: 680px) {
+  .notcoin {
+    width: 200px;
+    min-width: 250px;
+    height: 200px;
+    min-height: 230px;
+  }
+}
+
+@media only screen and (max-height: 610px) {
+  .notcoin {
+    width: 100px;
+    min-width: 180px;
+    height: 100px;
+    min-height: 170px;
+  }
+}
