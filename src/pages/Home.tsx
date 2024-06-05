@@ -9,12 +9,16 @@ import { useAppSelector } from '../redux/store'
 
 const Home = () => {
 	const user = useAppSelector(state=>state.user)
+	function styleCoinCount(number:number) {
+		if(String(number).length <= 8) return "count--9"
+		else return ""
+	}
 	return (
 		<div className="home-page">
 			<div className="page__leader">
 				<div className="leader__info">
 					<div className="info__coins">
-						<img src={CoinImg} className="coins__icon" /><p className="coins__count">{formatNumber(user.coin)}</p>
+						<img src={CoinImg} className="coins__icon" /><p className={`coins__count ${styleCoinCount(user.coin)}`}>{formatNumber(user.coin)}</p>
 					</div>
 					<div className="info__rank">
 							<div className="rank__place">

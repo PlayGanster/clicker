@@ -4,10 +4,10 @@ export function cutNumber(num: any) {
 	}
 	num = num.toString().replace(/[^0-9.]/g, '');
 	let si = [
-		{v: 1E3, s: " Тыс"},
-		{v: 1E6, s: " Млн"},
-		{v: 1E9, s: " Млрд"},
-		{v: 1E12, s: " Трл"},
+		{v: 1E3, s: "К"},
+		{v: 1E6, s: "M"},
+		{v: 1E9, s: "B"},
+		{v: 1E12, s: "T"},
 		{v: 1E15, s: "P"},
 		{v: 1E18, s: "E"}
 		];

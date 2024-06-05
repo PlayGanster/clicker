@@ -1,13 +1,16 @@
 .home-page {
 	width: 100%;
 	height: 100dvh;
-	background: radial-gradient(circle, rgba(253, 237, 201, 1) 0%, rgba(241, 158, 54, 1) 15%, rgba(23, 23, 23, 1) 75%);
+	background: radial-gradient(circle, rgba(253, 237, 201, 1) 0%, rgba(241, 158, 54, 1) 15%, rgba(23, 23, 23, 1) 100%);
 	padding-top: 100px;
 	padding-bottom: 140px;
+	padding-left: 15px;
+	padding-right: 15px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
+	overflow: hidden;
 }
 
 .home-page .page__bottom--color {
@@ -26,12 +29,14 @@
 	justify-content: center;
 	align-items: center;
 	z-index: 2;
+	overflow: hidden;
+	max-width: 500px;
 }
 
 .home-page .page__leader .leader__info {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 15px;
 }
 
 .home-page .page__leader .leader__info .info__coins {
@@ -42,14 +47,19 @@
 }
 
 .home-page .page__leader .leader__info .info__coins .coins__icon {
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
 }
 
 .home-page .page__leader .leader__info .info__coins .coins__count {
-	font-size: 62px;
+	font-size: clamp(26px, 9.5vw, 52px);
+	max-width: 500px;
 	color: white;
-	font-weight: bolder;
+	font-weight: 900;
+}
+
+.home-page .page__leader .leader__info .info__coins .coins__count.count--9 {
+	font-size: clamp(40px, 9.5vw, 62px);
 }
 
 .home-page .page__leader .leader__info .info__rank {
@@ -64,8 +74,8 @@
 	align-items: center;
 	gap: 5px;
 	color: white;
-	font-weight: 500;
-	font-size: 18px;
+	font-weight: 700;
+	font-size: 16px;
 }
 
 .home-page .page__leader .leader__info .info__rank .rank__place .place__venok {
@@ -77,8 +87,8 @@
 }
 
 .home-page .page__leader .leader__info .info__rank .rank__point {
-	width: 7.5px;
-	height: 7.5px;
+	width: 3px;
+	height: 3px;
 	border-radius: 50%;
 	background: white;
 }
@@ -96,9 +106,10 @@
 }
 
 .home-page .page__leader .leader__info .info__rank .rank__user .user__name {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 600;
 	color: white;
+	font-weight: 700;
 }
 
 .home-page .page__leader .root {
@@ -110,51 +121,8 @@
 	overflow: visible!important;
 }
 
-@media only screen and (max-height:730px) {
+@media only screen and (min-width: 600px) {
 	.home-page .page__leader .leader__info .info__coins .coins__count {
-		font-size: 52px;
-	}
-	.home-page .page__leader .leader__info .info__coins .coins__icon {
-		width: 50px;
-		height: 50px;
-	}
-	.home-page .page__leader .leader__info .info__rank .rank__place .place__venok {
-		width: 15px;
-	}
-	.home-page .page__leader .leader__info .info__rank .rank__place {
-		font-size: 16px;
-	}
-	.home-page .page__leader .leader__info .info__rank .rank__user svg {
-		width: 24px;
-	}
-	.home-page .page__leader .leader__info .info__rank .rank__user .user__name {
-		font-size: 16px;
-	}
-	.notcoin {
-		width: 200px!important;
-		min-width: 240px!important;
-		height: 200px!important;
-		min-height: 240px!important;
-	}
-}
-
-@media only screen and (max-height:650px) { 
-	.notcoin {
-		width: 150px!important;
-		min-width: 190px!important;
-		height: 150px!important;
-		min-height: 190px!important;
-	}
-}
-
-@media only screen and (min-width: 768px){
-	.home-page .page__leader{
-		flex-direction: row;
-	}
-	.notcoin {
-		width: 200px!important;
-		min-width: 220px!important;
-		height: 200px!important;
-		min-height: 220px!important;
+		font-size: 54px;
 	}
 }
