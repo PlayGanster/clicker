@@ -7,9 +7,9 @@ const tg = window.Telegram.WebApp
 
 const Frens = () => {
 	tg.BackButton.show()
-	// tg.onEvent('backButtonClicked', function() {
-	// 	window.location.href="/"
-	// });
+	tg.onEvent('backButtonClicked', function() {
+		window.location.href="/"
+	});
 	return (
 		<div className="frens-page">
 			<div className="wrapper">
