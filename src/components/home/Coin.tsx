@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import cn from 'classnames'
 
@@ -86,55 +86,64 @@ export const Coin = ({
     rotateY: 0,
   })
   const [numbers, setNumbers] = useState<NumberInfo[]>([])
+  const [active, setActive] = useState<boolean>(false)
 	const user = useAppSelector(state=>state.user)
 	const dispatch = useAppDispatch()
 
+  useEffect(() => {
+    setTimeout(() => {
+      setActive(true)
+    }, 500);
+  }, [])
+
   const handleTouchStart = (event: any) => {
-		if((user.energy - 5) >= 0) {
-		dispatch(setEnergy({data: user.energy - 5}))
-		dispatch(setCoin({data: user.coin + 5}))
-    handleClick();
-
-  if (notCoinRef.current) {
-    for (let i = 0; i < event.changedTouches.length; i++) {
-      const touch = event.changedTouches[i];
-      const rect = notCoinRef.current.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-
-      const offsetX = touch.clientX - centerX;
-      const offsetY = centerY - touch.clientY;
-
-      const rotateXValue = offsetY * 0.1;
-      const rotateYValue = offsetX * 0.1;
-
-      setButtonTransform((prevTransform) => ({
-        ...prevTransform,
-        rotateX: prevTransform.rotateX + rotateXValue,
-        rotateY: prevTransform.rotateY + rotateYValue,
-      }));
-
-      const randomNumberBetweenTenAndMinusTen =
-        Math.floor(Math.random() * 21) - 10;
-
-      const newNumber: NumberInfo = {
-        id: `${Date.now()}-${touch.identifier}`,
-        value: clickValue * 5,
-        x: touch.clientX + randomNumberBetweenTenAndMinusTen,
-        y: touch.clientY,
-      };
-
-      setNumbers((prevNumbers) => [...prevNumbers, newNumber]);
-
-      // Remove the number after the animation duration
-      setTimeout(() => {
-        setNumbers((prevNumbers) =>
-          prevNumbers.filter((number) => number.id !== newNumber.id)
-        );
-      }, numberAnimationDurationMs);
+    if(active){
+      if((user.energy - 5) >= 0) {
+      dispatch(setEnergy({data: user.energy - 5}))
+      dispatch(setCoin({data: user.coin + 5}))
+      handleClick();
+  
+    if (notCoinRef.current) {
+      for (let i = 0; i < event.changedTouches.length; i++) {
+        const touch = event.changedTouches[i];
+        const rect = notCoinRef.current.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+  
+        const offsetX = touch.clientX - centerX;
+        const offsetY = centerY - touch.clientY;
+  
+        const rotateXValue = offsetY * 0.1;
+        const rotateYValue = offsetX * 0.1;
+  
+        setButtonTransform((prevTransform) => ({
+          ...prevTransform,
+          rotateX: prevTransform.rotateX + rotateXValue,
+          rotateY: prevTransform.rotateY + rotateYValue,
+        }));
+  
+        const randomNumberBetweenTenAndMinusTen =
+          Math.floor(Math.random() * 21) - 10;
+  
+        const newNumber: NumberInfo = {
+          id: `${Date.now()}-${touch.identifier}`,
+          value: clickValue * 5,
+          x: touch.clientX + randomNumberBetweenTenAndMinusTen,
+          y: touch.clientY,
+        };
+  
+        setNumbers((prevNumbers) => [...prevNumbers, newNumber]);
+  
+        // Remove the number after the animation duration
+        setTimeout(() => {
+          setNumbers((prevNumbers) =>
+            prevNumbers.filter((number) => number.id !== newNumber.id)
+          );
+        }, numberAnimationDurationMs);
+      }
+      }
+      }
     }
-		}
-		}
   }
   const handleTouchEnd = () => {
     setButtonTransform({
