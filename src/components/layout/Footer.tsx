@@ -3,6 +3,7 @@ import Coin from "../../assets/coin.webp"
 import { formatNumber } from '../../other/formatNumber'
 import { useAppSelector } from '../../redux/store'
 import "../../styles/footer.scss"
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
 	const user = useAppSelector(state=>state.user)
@@ -24,15 +25,15 @@ const Footer = () => {
 					</div>
 				</div>
 				<div className="footer__navigation">
-					<div className="navigation-item">
+					<Link to="/frens" className="navigation-item">
 						<img src="https://smileysplanet.ru/smileys/apple/wrapped-gift-1945.png" className="item__icon"/>
 						<p className="item__name">Frens</p>
-					</div>
+					</Link>
 					<span className="tree"></span>
-					<div className="navigation-item">
+					<Link to="/earn" className="navigation-item">
 						<img src={Coin} className="item__icon"/>
 						<p className="item__name">Earn</p>
-					</div>
+					</Link>
 					<span className="tree"></span>
 					<div className="navigation-item">
 						<img src="https://smileysplanet.ru/smileys/apple/rocket-1845.png" className="item__icon"/>
