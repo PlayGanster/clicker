@@ -6,7 +6,10 @@ import "../styles/Frens.scss"
 const tg = window.Telegram.WebApp
 
 const Frens = () => {
-	tg.BackButton
+	tg.BackButton.show()
+	// tg.onEvent('backButtonClicked', function() {
+	// 	window.location.href="/"
+	// });
 	return (
 		<div className="frens-page">
 			<div className="wrapper">
