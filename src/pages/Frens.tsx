@@ -3,7 +3,10 @@ import CoinImg from "../assets/coin.webp"
 import TelegramPremium from "../assets/telegram_premium.webp"
 import "../styles/Frens.scss"
 
+const tg = window.Telegram.WebApp
+
 const Frens = () => {
+	tg.BackButton
 	return (
 		<div className="frens-page">
 			<div className="wrapper">
