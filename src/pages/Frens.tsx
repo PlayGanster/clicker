@@ -2,13 +2,15 @@ import { formatNumber } from '../other/formatNumber'
 import CoinImg from "../assets/coin.webp"
 import TelegramPremium from "../assets/telegram_premium.webp"
 import "../styles/Frens.scss"
+import { useNavigate } from 'react-router-dom'
 
 const tg = window.Telegram.WebApp
 
 const Frens = () => {
 	tg.BackButton.show()
+  const navigate = useNavigate();
 	tg.onEvent('backButtonClicked', function() {
-		window.location.href="/"
+		navigate("/")
 	});
 	return (
 		<div className="frens-page">
