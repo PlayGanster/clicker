@@ -9,7 +9,10 @@ import { useAppSelector } from '../redux/store'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 
+const tg = window.Telegram.WebApp
+
 const Home = () => {
+	tg.BackButton.hide()
 	const user = useAppSelector(state=>state.user)
 	function styleCoinCount(number:number) {
 		if(String(number).length <= 8) return "count--9"
