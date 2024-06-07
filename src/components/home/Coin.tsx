@@ -93,7 +93,7 @@ export const Coin = ({
   useEffect(() => {
     setTimeout(() => {
       setActive(true)
-    }, 1000);
+    }, 1200);
   }, [])
 
   const handleTouchStart = (event: any) => {
